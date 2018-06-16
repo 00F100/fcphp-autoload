@@ -60,7 +60,8 @@ use FcPhp\Autoload\Autoload;
  * @param array $extensionMatch List of enable extensions
  * @return void
  */
-Autoload::path(string $pathExpression, array $fileNameMatch, array $extensionMatch);
+$autoload = Autoload::getInstance();
+$autoload->path(string $pathExpression, array $fileNameMatch, array $extensionMatch);
 
 /*
 	Example to find inside composer directory
@@ -89,7 +90,7 @@ Autoload::path(string $pathExpression, array $fileNameMatch, array $extensionMat
 					providers.php
 
 */
-Autoload::path('vendor/*/*/autoload', ['providers', 'routes'], ['php']);
+$autoload->path('vendor/*/*/autoload', ['providers', 'routes'], ['php']);
 /*
 	============================================
 	Below example match this files:
@@ -105,20 +106,20 @@ Autoload::path('vendor/*/*/autoload', ['providers', 'routes'], ['php']);
 ```php
 /*
 	============================================
-	Get the content using getAutoload method
+	Get the content using 'get' method
 	============================================
 	[
 		'path/to/route' => [
 			'post' => 'SiteController@method'
 		]
 	]
-	$arrayProviders = Autoload::getAutoload('providers');
+	$arrayProviders = $autoload->get('providers');
 
 	[
 		\path\to\SomeClass,
 		\path\to\package\Cool
 	]
-	$arrayRoutes = Autoload::getAutoload('routes');
+	$arrayRoutes = $autoload->get('routes');
 */
 /**
  * Method to return autoloaded files
@@ -126,6 +127,44 @@ Autoload::path('vendor/*/*/autoload', ['providers', 'routes'], ['php']);
  * @param string $key Filename
  * @return array
  */
-Autoload::getAutoload(string $fileName);
+$autoload->get(string $fileName);
+
+```
+
+## Triggers
+
+#### Before Match
+
+This clousure run before match run
+
+```php
+
+$instance->beforeMatch(function(string $pathExpression, array $fileNameMatch, array $extensionMatch) {
+	// your code here
+});
+
+```
+
+#### Before Match Again
+
+This clousure run before match some dir again
+
+```php
+
+$instance->beforeMatchAgain(function(array $paths, array $files, array $extensions, string $path, string $now) {
+	// your code here
+});
+
+```
+
+#### Before Storage
+
+This clousure run before storage file content
+
+```php
+
+$instance->beforeStorage(function(string $file, string $filePath) {
+	// your code here
+});
 
 ```
