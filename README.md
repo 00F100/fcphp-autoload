@@ -2,7 +2,7 @@
 
 Package to autoload providers and routes into another composer packages
 
-[![Build Status](https://travis-ci.org/00F100/fcphp-autoload.svg?branch=master)](https://travis-ci.org/00F100/fcphp-autoload) [![codecov](https://codecov.io/gh/00F100/fcphp-autoload/branch/master/graph/badge.svg)](https://codecov.io/gh/00F100/fcphp-autoload)
+[![Build Status](https://travis-ci.org/00F100/fcphp-autoload.svg?branch=master)](https://travis-ci.org/00F100/fcphp-autoload) [![codecov](https://codecov.io/gh/00F100/fcphp-autoload/branch/master/graph/badge.svg)](https://codecov.io/gh/00F100/fcphp-autoload) [![Total Downloads](https://poser.pugx.org/00F100/fcphp-autoload/downloads)](https://packagist.org/packages/00F100/fcphp-autoload)
 
 ## How to install
 
