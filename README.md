@@ -7,11 +7,13 @@ Package to autoload providers and routes into another composer packages
 ## How to install
 
 Composer:
+
 ```sh
 $ composer require 00f100/fcphp-autoload
 ```
 
 or add in composer.json
+
 ```json
 {
 	"require": {
