@@ -1,7 +1,7 @@
 {
     "name": "00f100/fcphp-autoload",
     "type": "package",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "Autoload providers and routes into composer vendor package",
     "keywords": ["autoload", "provider", "routes", "composer", "package", "subpackage", "vendor"],
     "homepage": "https://github.com/00f100/fcphp-autoload",
