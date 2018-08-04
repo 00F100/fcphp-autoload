@@ -1,5 +1,5 @@
 <?php
 
 return [
-	'\Patch\To\Class',
+    '\Patch\To\Class',
 ];

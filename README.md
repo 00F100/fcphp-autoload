@@ -16,9 +16,9 @@ or add in composer.json
 
 ```json
 {
-	"require": {
-		"00f100/fcphp-autoload": "*"
-	}
+    "require": {
+        "00f100/fcphp-autoload": "*"
+    }
 }
 ```
 
@@ -30,8 +30,8 @@ or add in composer.json
 <?php
 
 return [
-	\path\to\SomeClass::class,
-	\path\to\package\Cool::class
+    \path\to\SomeClass::class,
+    \path\to\package\Cool::class
 ];
 ```
 
@@ -41,9 +41,9 @@ return [
 <?php
 
 return [
-	'path/to/route' => [
-		'post' => 'SiteController@method'
-	]
+    'path/to/route' => [
+        'post' => 'SiteController@method'
+    ]
 ];
 ```
 
@@ -66,62 +66,62 @@ $autoload = Autoload::getInstance();
 $autoload->path(string $pathExpression, array $fileNameMatch, array $extensionMatch);
 
 /*
-	Example to find inside composer directory
+    Example to find inside composer directory
 
-	============================================
-	Example directory:
-	============================================
+    ============================================
+    Example directory:
+    ============================================
 
-	vendor/
-		00f100/
-			fcphp-di/
-				autoload/
-					providers.php
-					prividers.txt
-			fcphp-i18n/
-			fcphp-provider/
-				autoload/
-					routes.php
-		doctrine/
-			doctrine/
-			instructor/
-		cake/
-			bin/
-			cake/
-				autoload/
-					providers.php
+    vendor/
+        00f100/
+            fcphp-di/
+                autoload/
+                    providers.php
+                    prividers.txt
+            fcphp-i18n/
+            fcphp-provider/
+                autoload/
+                    routes.php
+        doctrine/
+            doctrine/
+            instructor/
+        cake/
+            bin/
+            cake/
+                autoload/
+                    providers.php
 
 */
 $autoload->path('vendor/*/*/autoload', ['providers', 'routes'], ['php']);
 /*
-	============================================
-	Below example match this files:
-	============================================
+    ============================================
+    Below example match this files:
+    ============================================
 
-	vendor/00f100/fcphp-di/autoload/providers.php
-	vendor/00f100/fcphp-provider/autoload/routes.php
-	vendor/cake/cake/autoload/providers.php
+    vendor/00f100/fcphp-di/autoload/providers.php
+    vendor/00f100/fcphp-provider/autoload/routes.php
+    vendor/cake/cake/autoload/providers.php
 */
 ```
 
 #### Get content of files
 ```php
 /*
-	============================================
-	Get the content using 'get' method
-	============================================
-	[
-		'path/to/route' => [
-			'post' => 'SiteController@method'
-		]
-	]
-	$arrayProviders = $autoload->get('providers');
+    ============================================
+    Get the content using 'get' method
+    ============================================
+    [
+        'path/to/route' => [
+            'post' => 'SiteController@method'
+        ]
+    ]
+    $arrayProviders = $autoload->get('providers');
 
-	[
-		\path\to\SomeClass,
-		\path\to\package\Cool
-	]
-	$arrayRoutes = $autoload->get('routes');
+    [
+        \path\to\SomeClass,
+        \path\to\package\Cool
+    ]
+    $arrayRoutes = $autoload->get('routes');
 */
 /**
  * Method to return autoloaded files
@@ -142,7 +142,7 @@ This clousure run before match run
 ```php
 
 $instance->beforeMatch(function(string $pathExpression, array $fileNameMatch, array $extensionMatch) {
-	// your code here
+    // your code here
 });
 
 ```
@@ -154,7 +154,7 @@ This clousure run before match some dir again
 ```php
 
 $instance->beforeMatchAgain(function(array $paths, array $files, array $extensions, string $path, string $now) {
-	// your code here
+    // your code here
 });
 
 ```
@@ -166,7 +166,7 @@ This clousure run before storage file content
 ```php
 
 $instance->beforeStorage(function(string $file, string $filePath) {
-	// your code here
+    // your code here
 });
 
 ```
